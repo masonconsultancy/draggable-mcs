@@ -1,15 +1,18 @@
-<h1 align="center">Draggable</h1>
+<h1 align="center">draggable-mcs</h1>
 
 <p align="center">
 	<strong>The jQuery plugin that makes a div into a draggable object.</strong>
 </p>
 
 <p align="center">
-	<a href="https://github.com/masonconsultancy/draggable/releases/latest" target="_blank">
-		<img src="https://img.shields.io/github/release/masonconsultancy/draggable.svg" alt="Latest release">
+	<a href="https://github.com/masonconsultancy/draggable-mcs/releases/latest" target="_blank">
+		<img src="https://img.shields.io/github/release/masonconsultancy/draggable-mcs.svg" alt="Latest release">
+	</a>
+	<a href="https://www.npmjs.com/package/draggable-mcs" target="_blank">
+		<img src="https://img.shields.io/npm/v/draggable-mcs.svg" alt="npm">
 	</a>
 	<br>
-	<a href="https://github.com/masonconsultancy/draggable/blob/main/LICENSE" target="_blank">
+	<a href="https://github.com/masonconsultancy/draggable-mcs/blob/main/LICENSE" target="_blank">
 		<img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="License">
 	</a>
 </p>
@@ -20,11 +23,11 @@ You can view a live demo and some examples of how to use the various options [he
 
 ## Quick start
 
-Draggable requires jQuery v1.9.1+.
+draggable-mcs requires jQuery v1.9.1+.
 
 Several quick start options are available:
 
-- Clone the repo: `git clone git@github.com:masonconsultancy/draggable.git`
+- Clone the repo: `git clone git@github.com:masonconsultancy/draggable-mcs.git`
 
 ```html
 
