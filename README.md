@@ -30,6 +30,7 @@ Several quick start options are available:
 
 <!-- Latest compiled and minified JavaScript -->
 Under contstruction!
+```
 
 ## Usage
 
