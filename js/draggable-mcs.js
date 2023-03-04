@@ -1,9 +1,9 @@
 ﻿/*!
- * Draggable v1.0.0 (https://github.com/masonconsultancy/draggable)
+ * Draggable v1.0.0 (https://github.com/masonconsultancy/draggable-mcs)
  *
  * Copyright 2023 Mason Consultancy Ltd
  * Author: Gary Mason
- * Licensed under MIT (https://github.com/masonconsultancy/draggable/blob/main/LICENSE)
+ * Licensed under MIT (https://github.com/masonconsultancy/draggable-mcs/blob/main/LICENSE)
  */
 (function ($) {
 
