@@ -1,7 +1,7 @@
 {
-  "name": "draggable",
-  "title": "draggable",
-  "main": "dist/js/draggable.js",
+  "name": "draggable-mcs",
+  "title": "draggable-mcs",
+  "main": "dist/js/draggable-mcs.js",
   "description": "The jQuery plugin that makes a div into a draggable object.",
   "version": "1.0.0",
   "homepage": "https://mason-consultancy.com/",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/masonconsultancy/draggable.git"
+    "url": "git://github.com/masonconsultancy/draggable-mcs.git"
   },
   "license": "MIT",
   "dependencies": {},
