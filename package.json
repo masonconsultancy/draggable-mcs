@@ -2,7 +2,7 @@
   "name": "draggable-mcs",
   "title": "draggable-mcs",
   "main": "dist/js/draggable-mcs.js",
-  "description": "The jQuery plugin that makes a div into a draggable object.",
+  "description": "The jQuery plugin that makes a div into a draggable object",
   "version": "1.0.0",
   "homepage": "https://mason-consultancy.com/",
   "author": {
@@ -16,7 +16,7 @@
   "license": "MIT",
   "dependencies": {},
   "peerDependencies": {
-    "jquery": "1.9.1 - 3",
+    "jquery": "1.9.1 - 3"
   },
   "browserslist": [
     "Android 2.3",
