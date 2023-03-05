@@ -20,10 +20,9 @@
     });
 
     return this;
-
   };
 
-  function dragElement(item, headerItem) {
+  function dragElement (item, headerItem) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
     headerItem.on('mousedown', function (mouseDownEvent) {
@@ -49,5 +48,4 @@
       });
     });
   };
-
 }(jQuery));
