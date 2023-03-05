@@ -99,17 +99,6 @@ module.exports = function (grunt) {
       }
     },
 
-    copy: {
-      docs: {
-        expand: true,
-        cwd: 'dist/',
-        src: [
-          '**/*'
-        ],
-        dest: 'docs/docs/dist/'
-      }
-    },
-
     cssmin: {
       options: {
         compatibility: 'ie8',
@@ -157,6 +146,22 @@ module.exports = function (grunt) {
           'js/<%= pkg.name %>.js'
         ]
       },
+      cdn: {
+        options: {
+          prefix: 'npm/<%= pkg.name %>@'
+        },
+        src: [
+          'README.md'
+        ]
+      },
+      nuget: {
+        options: {
+          prefix: '<version>'
+        },
+        src: [
+          'nuget/draggable-mcs.nuspec'
+        ]
+      },
       default: {
         options: {
           prefix: '[\'"]?version[\'"]?:[ "\']*'
@@ -192,7 +197,7 @@ module.exports = function (grunt) {
             src: '**',
             dest: 'draggable-mcs-<%= pkg.version %>/'
           }, {
-            src: ['package.json'],
+            src: ['bower.json', 'composer.json', 'package.json'],
             dest: 'draggable-mcs-<%= pkg.version %>/'
           }
         ]
@@ -230,7 +235,7 @@ module.exports = function (grunt) {
   grunt.registerTask('build-js', ['clean:js', 'eslint', 'concat', 'uglify']);
 
   // Copy dist to docs
-  grunt.registerTask('copy-docs', ['clean:docs', 'copy:docs']);
+  //grunt.registerTask('copy-docs', ['clean:docs', 'copy:docs']);
 
   // Build CSS & JS
   grunt.registerTask('build', ['build-css', 'build-js']);
