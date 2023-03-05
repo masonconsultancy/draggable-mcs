@@ -57,7 +57,7 @@
         headerItem.unbind("mouseup");
         item.unbind("mousemove");
       });
-    })
+    });
   }
 
 }(jQuery));
