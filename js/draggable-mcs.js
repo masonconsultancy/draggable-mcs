@@ -58,6 +58,6 @@
         item.unbind("mousemove");
       });
     });
-  }
+  };
 
 }(jQuery));
