@@ -1,0 +1,8 @@
+.draggable {
+    z-index: 1060;
+    position: absolute;
+}
+
+.draggable-header {
+    cursor: move;
+}

@@ -12,3 +12,4 @@ draggable-mcs-*.zip
 dist/
 
 docs/site
+/.vs
