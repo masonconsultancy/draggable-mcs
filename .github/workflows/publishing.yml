@@ -22,3 +22,12 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Publish NuGet package
+        id: publish_nuget
+        uses: laget-se/publish-nuget@v2
+        with:
+          NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
+          NUSPEC_FILE: nuget/draggable-mcs.nuspec
+          PACKAGE_NAME: draggable-mcs
+          VERSION_FILE_PATH: nuget/draggable-mcs.nuspec
+          VERSION_REGEX: ^\s*<version>(.*)<\/version>\s*$
