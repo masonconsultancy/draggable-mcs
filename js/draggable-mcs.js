@@ -1,11 +1,4 @@
-﻿/*!
- * Draggable v1.0.0 (https://github.com/masonconsultancy/draggable-mcs)
- *
- * Copyright 2023 Mason Consultancy Ltd
- * Author: Gary Mason
- * Licensed under MIT (https://github.com/masonconsultancy/draggable-mcs/blob/main/LICENSE)
- */
-(function ($) {
+﻿(function ($) {
 
   'use strict';
 
@@ -17,7 +10,7 @@
 
     var settings = $.extend({}, defaults, options);
 
-    this.filter('div.draggable').each(function () {
+    this.filter("div.draggable").each(function () {
 
       var item = $(this);
 
