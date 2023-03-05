@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Draggable Tests (Bootstrap 4)</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../css/draggable-mcs.css">
+
+    <style>
+        body {
+            padding-top: 70px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div style="border:1px solid; width: 400px; height:400px;" class="draggable">
+        <div style=" border: 1px solid; background-color:aliceblue; padding:10px" class="draggable-header">
+            Featured
+        </div>
+        <div style="min-width:auto">
+            <h2>Special title treatment</h2>
+            <p>With supporting text below as a natural lead-in to additional content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/draggable-mcs.js"></script>
+    
+    <script>
+        $(function () {
+            $('div.draggable').draggable();
+        });
+    </script>
+</body>
+</html>

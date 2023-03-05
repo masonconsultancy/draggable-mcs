@@ -19,6 +19,7 @@ module.exports = function (grunt) {
     // Task configuration.
 
     clean: {
+      css: 'dist/css',
       js: 'dist/js',
     },
 
@@ -75,6 +76,29 @@ module.exports = function (grunt) {
       }
     },
 
+    less: {
+        options: {
+            strictMath: true,
+            sourceMap: true,
+            outputSourceFiles: true,
+            sourceMapURL: '<%= pkg.name %>.css.map',
+            sourceMapFilename: '<%= less.css.dest %>.map'
+        },
+        css: {
+            src: 'less/draggable-mcs.less',
+            dest: 'dist/css/<%= pkg.name %>.css'
+        }
+    },
+
+    usebanner: {
+        css: {
+            options: {
+                banner: '<%= banner %>'
+            },
+            src: '<%= less.css.dest %>'
+        }
+    },
+
     copy: {
       docs: {
         expand: true,
@@ -86,6 +110,44 @@ module.exports = function (grunt) {
       }
     },
 
+    cssmin: {
+        options: {
+            compatibility: 'ie8',
+            keepSpecialComments: '*',
+            advanced: false
+        },
+        css: {
+            src: '<%= less.css.dest %>',
+            dest: 'dist/css/<%= pkg.name %>.min.css'
+        }
+    },
+
+    csslint: {
+        options: {
+            'adjoining-classes': false,
+            'box-sizing': false,
+            'box-model': false,
+            'compatible-vendor-prefixes': false,
+            'floats': false,
+            'font-sizes': false,
+            'gradients': false,
+            'important': false,
+            'known-properties': false,
+            'outline-none': false,
+            'qualified-headings': false,
+            'regex-selectors': false,
+            'shorthand': false,
+            'text-indent': false,
+            'unique-headings': false,
+            'universal-selector': false,
+            'unqualified-attributes': false,
+            'overqualified-elements': false
+        },
+        css: {
+            src: '<%= less.css.dest %>'
+        }
+    },
+
     version: {
       js: {
         options: {
@@ -94,7 +156,27 @@ module.exports = function (grunt) {
         src: [
           'js/<%= pkg.name %>.js'
         ]
+        },
+      default: {
+        options: {
+            prefix: '[\'"]?version[\'"]?:[ "\']*'
+        },
+        src: [
+            'package.json'
+        ]
       }
+    },
+
+    postcss: {
+        options: {
+            map: true,
+            processors: [
+                require('autoprefixer')()
+            ]
+        },
+        css: {
+            src: '<%= less.css.dest %>'
+        }
     },
 
     compress: {
@@ -125,6 +207,10 @@ module.exports = function (grunt) {
       js: {
         files: ['<%= eslint.main.src %>'],
         tasks: 'build-js'
+        },
+      less: {
+        files: 'less/*.less',
+        tasks: 'build-css'
       }
     }
   });

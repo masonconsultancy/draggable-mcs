@@ -12,9 +12,7 @@
     $.fn.draggable = function (options) {
 
         var defaults = {
-            zIndex: "99",
-            cursor: "move",
-            headerIdentifier = ".card-header"
+            headerIdentifier: ".draggable-header"
         };
 
         var settings = $.extend({}, defaults, options);
@@ -23,12 +21,7 @@
 
             var item = $(this);
 
-            item.css("position", "absolute");
-            item.css("z-index", settings.zIndex);
-
             var headerItem = item.find(settings.headerIdentifier) ?? item;
-
-            headerItem.css("cursor", settings.cursor);
 
             headerItem.unbind("mouseup mousedown");
             item.unbind("mousemove");
