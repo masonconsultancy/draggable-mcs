@@ -13,7 +13,7 @@
 	</a>
 	<br>
 	<a href="https://github.com/masonconsultancy/draggable-mcs/blob/main/LICENSE" target="_blank">
-		<img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="License">
+		<img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge">
 	</a>
 </p>
 
