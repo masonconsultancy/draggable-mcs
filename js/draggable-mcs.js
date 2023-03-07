@@ -44,8 +44,8 @@
           left: item.offset().left - pos1
         });
       });
-      $(document).on("mouseup", function () {
-        $(document).unbind("mouseup mousemove");
+      $(document).on('mouseup', function () {
+        $(document).unbind('mouseup mousemove');
       });
     });
   };
