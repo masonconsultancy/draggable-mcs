@@ -13,8 +13,8 @@
 
       var headerItem = item.find(settings.headerIdentifier) ?? item;
 
-      headerItem.unbind('mouseup mousedown');
-      item.unbind('mousemove');
+      headerItem.unbind('mousedown');
+      $(document).unbind('mouseup mousemove');
 
       dragElement(item, headerItem);
     });
@@ -26,10 +26,12 @@
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
 
     headerItem.on('mousedown', function (mouseDownEvent) {
+      mouseDownEvent = mouseDownEvent || window.event;
       mouseDownEvent.preventDefault();
       pos3 = mouseDownEvent.clientX;
       pos4 = mouseDownEvent.clientY;
-      item.on('mousemove', function (moveEvent) {
+      $(document).on('mousemove', function (moveEvent) {
+        moveEvent = moveEvent || window.event;
         moveEvent.preventDefault();
         // calculate the new cursor position:
         pos1 = pos3 - moveEvent.clientX;
@@ -42,9 +44,8 @@
           left: item.offset().left - pos1
         });
       });
-      headerItem.on('mouseup', function () {
-        headerItem.unbind('mouseup');
-        item.unbind('mousemove');
+      $(document).on('mouseup', function () {
+        $(document).unbind('mouseup mousemove');
       });
     });
   };
