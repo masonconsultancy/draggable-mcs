@@ -6,14 +6,14 @@
 
 <p align="center">
 	<a href="https://github.com/masonconsultancy/draggable-mcs/releases/latest" target="_blank">
-		<img src="https://img.shields.io/github/release/masonconsultancy/draggable-mcs.svg" alt="Latest release">
+		<img alt="GitHub release (latest SemVer)" src="https://img.shields.io/github/v/release/masonconsultancy/draggable-mcs?style=for-the-badge">
 	</a>
 	<a href="https://www.npmjs.com/package/draggable-mcs" target="_blank">
-		<img src="https://img.shields.io/npm/v/draggable-mcs.svg" alt="npm">
+		<img alt="npm" src="https://img.shields.io/npm/v/draggable-mcs?style=for-the-badge">
 	</a>
 	<br>
 	<a href="https://github.com/masonconsultancy/draggable-mcs/blob/main/LICENSE" target="_blank">
-		<img src="https://img.shields.io/badge/license-MIT-brightgreen.svg" alt="License">
+		<img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge">
 	</a>
 </p>
 
