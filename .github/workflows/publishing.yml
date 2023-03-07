@@ -7,13 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     name: Publish latest release
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup node
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '16.x'
-          cache: 'npm'
-          registry-url: 'https://registry.npmjs.org'
+          node-version: 16
+          registry-url: https://registry.npmjs.org
       - name: Install dependencies
         run: npm ci
       - name: Build package
@@ -23,11 +22,12 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Publish NuGet package
-        id: publish_nuget
-        uses: laget-se/publish-nuget@v2
+        id: publish_gpr
+        uses: actions/setup-node@v3
         with:
-          NUGET_KEY: ${{ secrets.NUGET_API_KEY }}
-          NUSPEC_FILE: nuget/draggable-mcs.nuspec
-          PACKAGE_NAME: draggable-mcs
-          VERSION_FILE_PATH: nuget/draggable-mcs.nuspec
-          VERSION_REGEX: ^\s*<version>(.*)<\/version>\s*$
+          node-version: 16
+          registry-url: https://npm.pkg.github.com/
+      - run: npm ci
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
