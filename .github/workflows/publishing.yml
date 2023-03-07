@@ -15,8 +15,8 @@ jobs:
           registry-url: https://registry.npmjs.org
       - name: Install dependencies
         run: npm ci
-      - name: Build package
-        run: grunt build
+      #- name: Build package
+      #  run: grunt build*/
       - name: Publish npm package
         run: npm publish
         env:
