@@ -14,7 +14,7 @@
       var headerItem = item.find(settings.headerIdentifier) ?? item;
 
       headerItem.unbind('mousedown');
-      $(document).unbind("mouseup mousemove");
+      $(document).unbind('mouseup mousemove');
 
       dragElement(item, headerItem);
     });
