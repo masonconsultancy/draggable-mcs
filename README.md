@@ -17,23 +17,15 @@
 	</a>
 </p>
 
-## Demo
-
-You can view a live demo and some examples of how to use the various options [here](https://mason-consultancy.com).
-
 ## Quick start
 
 draggable-mcs requires jQuery v1.9.1+.
 
 Several quick start options are available:
 
+-[Download the latest release.](https://github.com/masonconsultancy/draggable-mcs/releases/latest)
 - Clone the repo: `git clone git@github.com:masonconsultancy/draggable-mcs.git`
-
-```html
-
-<!-- Latest compiled and minified JavaScript -->
-Under contstruction!
-```
+- Install with [npm](https://www.npmjs.com/package/draggable-mcs): `npm install draggable-mcs`
 
 ## Usage
 
@@ -54,6 +46,35 @@ If calling draggable via JavaScript, you will need to wrap your code in a [`.rea
 $(function () {
 	$('div.draggable').draggable();
 });
+```
+
+### Information
+
+<p>It's important that the main div contains a class draggable and whatever you are using for the draggable handle is assigned a class draggable-header</p>
+
+### Bootstrap 4.6 Example
+```html
+<div class="card text-center draggable">
+    <div class="card-header draggable-header">Featured</div>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+	  <a href="#" class="btn btn-primary">Go somewhere</a>
+	</div>
+  <div class="card-footer text-muted">2 days ago</div>
+</div>
+```
+### Non Bootstrap Example
+
+```html
+<div style="border:1px solid; width: 400px; height:400px;" class="draggable">
+  <div style=" border: 1px solid; background-color:aliceblue; padding:10px" class="draggable-header">Featured</div>
+  <div style="min-width:auto">
+	<h2>Special title treatment</h2>
+    <p>With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
 ```
 
 ## Bugs and feature requests
