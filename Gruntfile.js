@@ -25,7 +25,7 @@ module.exports = function (grunt) {
 
     eslint: {
       options: {
-        configFile: 'js/.eslintrc.json'
+        configFile: '.eslintrc.json'
       },
       gruntfile: {
         options: {
@@ -36,7 +36,7 @@ module.exports = function (grunt) {
         src: 'Gruntfile.js'
       },
       main: {
-        src: 'js/*.js'
+        src: 'src/*.js'
       }
     },
 
@@ -46,11 +46,11 @@ module.exports = function (grunt) {
         sourceMap: true
       },
       main: {
-        src: 'js/<%= pkg.name %>.js',
+        src: 'src/<%= pkg.name %>.js',
         dest: 'dist/js/<%= pkg.name %>.js',
         options: {
-          banner: '<%= banner %>\n' + grunt.file.read('js/umd-intro.js'),
-          footer: grunt.file.read('js/umd-outro.js')
+          banner: '<%= banner %>\n' + grunt.file.read('src/intro.js'),
+          footer: grunt.file.read('src/outro.js')
         }
       }
     },
@@ -143,23 +143,7 @@ module.exports = function (grunt) {
           prefix: 'draggable-mcs.VERSION = \''
         },
         src: [
-          'js/<%= pkg.name %>.js'
-        ]
-      },
-      cdn: {
-        options: {
-          prefix: 'npm/<%= pkg.name %>@'
-        },
-        src: [
-          'README.md'
-        ]
-      },
-      nuget: {
-        options: {
-          prefix: '<version>'
-        },
-        src: [
-          'nuget/draggable-mcs.nuspec'
+          'src/<%= pkg.name %>.js'
         ]
       },
       default: {
@@ -197,7 +181,7 @@ module.exports = function (grunt) {
             src: '**',
             dest: 'draggable-mcs-<%= pkg.version %>/'
           }, {
-            src: ['bower.json', 'composer.json', 'package.json'],
+            src: ['package.json'],
             dest: 'draggable-mcs-<%= pkg.version %>/'
           }
         ]
@@ -241,7 +225,7 @@ module.exports = function (grunt) {
   grunt.registerTask('dev-watch', ['build', 'watch']);
 
   // Full distribution
-  grunt.registerTask('dist', ['build', 'compress', 'copy-docs']);
+  grunt.registerTask('dist', ['build', 'compress']);
 
   // Default task.
   grunt.registerTask('default', 'build');
