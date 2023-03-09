@@ -23,9 +23,37 @@ draggable-mcs requires jQuery v1.9.1+.
 
 Several quick start options are available:
 
--[Download the latest release.](https://github.com/masonconsultancy/draggable-mcs/releases/latest)
-- Clone the repo: `git clone git@github.com:masonconsultancy/draggable-mcs.git`
-- Install with [npm](https://www.npmjs.com/package/draggable-mcs): `npm install draggable-mcs`
+### Download
+[Download the latest release.](https://github.com/masonconsultancy/draggable-mcs/releases/latest)
+
+### Clone the Repository
+Clone the repo: `git clone git@github.com:masonconsultancy/draggable-mcs.git`
+
+### Npmjs
+Install with [npm](https://www.npmjs.com/package/draggable-mcs): `npm install draggable-mcs`
+
+### Libman Library Manager
+
+Add this to the libman.json file to include draggable-mcs in your root folder
+
+```js
+{
+  "provider": "jsdelivr",
+  "library": "draggable-mcs@1.0.14",
+  "destination": "wwwroot/lib/draggable-mcs/",
+  "files": [
+    "dist/css/draggable-mcs.css",
+    "dist/css/draggable-mcs.css.map",
+    "dist/css/draggable-mcs.min.css",
+    "dist/js/draggable-mcs.js",
+    "dist/js/draggable-mcs.js.map",
+    "dist/js/draggable-mcs.min.js",
+    "dist/js/draggable-mcs.min.js.map"
+  ]
+}
+```
+
+You can replace the version number with latest, to get the latest version.
 
 ## Usage
 
