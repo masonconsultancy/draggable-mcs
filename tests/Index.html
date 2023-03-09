@@ -4,7 +4,7 @@
     <title>Draggable Tests (Bootstrap 4)</title>
 
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/draggable-mcs.css">
@@ -18,29 +18,91 @@
 </head>
 <body>
 
-    <div class="card text-center draggable">
-        <div class="card-header draggable-header">
-            Featured
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-            2 days ago
-        </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <button id="dock1" type="button" class="btn btn-primary">Dock draggable object 1 to here</button>
+        </li> |
+        <li class="nav-item">
+          <button id="dock2" type="button" class="btn btn-primary">Dock draggable object 2 to here</button>
+        </li> |
+        <li class="nav-item">
+          <button id="dock3" type="button" class="btn btn-primary">Position draggable object 3 to (0,0)</button>
+        </li>
+      </ul>
     </div>
+  </nav>
+
+  <div id="div1" class="card text-center draggable d-none">
+    <div class="card-header draggable-header">
+      Featured 1
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer text-muted">
+      Docked to link 1
+    </div>
+  </div>
+
+  <div id="div2" class="card text-center draggable d-none">
+    <div class="card-header draggable-header">
+      Featured 2
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer text-muted">
+      Docked to link 2 down 50
+    </div>
+  </div>
+
+  <div id="div3" class="card text-center draggable d-none">
+    <div class="card-header draggable-header">
+      Featured 3
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">Special title treatment</h5>
+      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+    <div class="card-footer text-muted">
+      Positioned @ x300,y100
+    </div>
+  </div>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/draggable-mcs.js"></script>
-    
-    <script>
-        $(function () {
-            $('div.draggable').draggable();
-        });
-    </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+  <script src="../src/draggable-mcs.js"></script>
+
+  <script>
+    $(function () {
+
+      $('#dock1').on('click', function (e) {
+        $('#div1').removeClass('d-none');
+        $('#div1').draggable({ position: { dock: '#dock1' } });
+      });
+
+      $('#dock2').on('click', function (e) {
+        $('#div2').removeClass('d-none');
+        $('#div2').draggable({ position: { dock: '#dock2', top: 50, left: 0 } });
+      });
+
+      $('#dock3').on('click', function (e) {
+        $('#div3').removeClass('d-none');
+        $('#div3').draggable({ position: { top: 300, left: 100 } });
+      });
+    });
+  </script>
 </body>
 </html>
