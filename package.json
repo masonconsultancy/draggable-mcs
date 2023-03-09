@@ -3,7 +3,7 @@
   "title": "draggable-mcs",
   "main": "dist/js/draggable-mcs.js",
   "description": "The jQuery plugin that makes a div into a draggable object",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "homepage": "https://mason-consultancy.com/",
   "author": {
     "name": "Gary Mason",
