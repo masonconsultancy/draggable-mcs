@@ -29,13 +29,13 @@
     return this;
   };
 
-  function positionElement(item, position) {
-
+  function positionElement (item, position) {
     if (position.dock) {
       var dockableItem = $(position.dock);
 
-      if (!dockableItem)
+      if (!dockableItem) {
         return;
+      }
 
       var y = position.top ?? 0;
       var x = position.left ?? 0;
@@ -48,11 +48,13 @@
       return;
     }
 
-    if (position.top)
+    if (position.top) {
       item.css({ top: position.top });
+    }
 
-    if (position.left)
+    if (position.left) {
       item.css({ left: position.left });
+    }
   }
 
   function dragElement (item, headerItem) {
