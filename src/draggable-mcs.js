@@ -3,13 +3,20 @@
 
   $.fn.draggable = function (options) {
     var defaults = {
-      headerIdentifier: '.draggable-header'
+      headerIdentifier: '.draggable-header',
+      position: {
+        dock: null,
+        top: null,
+        left: null
+      }
     };
 
     var settings = $.extend({}, defaults, options);
 
     this.filter('div.draggable').each(function () {
       var item = $(this);
+
+      positionElement(item, settings.position);
 
       var headerItem = item.find(settings.headerIdentifier) ?? item;
 
@@ -21,6 +28,34 @@
 
     return this;
   };
+
+  function positionElement (item, position) {
+    if (position.dock) {
+      var dockableItem = $(position.dock);
+
+      if (!dockableItem) {
+        return;
+      }
+
+      var y = position.top ?? 0;
+      var x = position.left ?? 0;
+
+      item.css({
+        top: dockableItem.offset().top + y,
+        left: dockableItem.offset().left + x
+      });
+
+      return;
+    }
+
+    if (position.top) {
+      item.css({ top: position.top });
+    }
+
+    if (position.left) {
+      item.css({ left: position.left });
+    }
+  }
 
   function dragElement (item, headerItem) {
     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;

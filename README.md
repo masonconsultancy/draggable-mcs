@@ -92,17 +92,40 @@ $(function () {
   <div class="card-footer text-muted">2 days ago</div>
 </div>
 ```
-### Non Bootstrap Example
+##Options
 
-```html
-<div style="border:1px solid; width: 400px; height:400px;" class="draggable">
-  <div style=" border: 1px solid; background-color:aliceblue; padding:10px" class="draggable-header">Featured</div>
-  <div style="min-width:auto">
-	<h2>Special title treatment</h2>
-    <p>With supporting text below as a natural lead-in to additional content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+### Dock top left of the target element
+
+```js
+{
+  .draggable({ position: { dock: '#jQuerytarget' } });
+}
+```
+### Dock top left of the target element and move down 50
+
+```js
+{
+  .draggable({ position: { dock: '#jQuerytarget', top: 50, left: 0 } });
+}
+```
+
+### Dock relative to viewport (x=150, y=50)
+
+```js
+{
+  .draggable({ position: { top: 50, left: 150 } });
+}
+```
+
+### Change header target identifier
+
+<p>Please note that this does not set the header with the css styles for the default target identifer '.draggable-header'</p>
+<p>You will need to set your own css for this new header target.</p>
+
+```js
+{
+  .draggable({ headerIdentifier: '#headerid' });
+}
 ```
 
 ## Bugs and feature requests
