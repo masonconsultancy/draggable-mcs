@@ -142,6 +142,6 @@ Draggable's documentation, included in this repo is still being completed.
 
 ## Copyright and license
 
-Copyright (C) 2023 [Mason Consultancy Ltd](https://mason-consultancy.com)
+Copyright (C) 2023 [Mason Consultancy Ltd](mason-consultancy.com)
 
 Licensed under [the MIT license](LICENSE).
