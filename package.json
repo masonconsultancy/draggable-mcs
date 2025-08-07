@@ -29,7 +29,7 @@
     "grunt-contrib-less": "^2.1.0",
     "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-eslint": "^22.0.0",
+    "grunt-eslint": "^25.0.0",
     "grunt-postcss": "^0.9.0",
     "grunt-version": "^2.0.0",
     "load-grunt-tasks": "^5.1.0",
